@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import CardView from "./CardView/CardView";
 
 function App() {
+  const [cards, setCards] = useState([
+    {rank: '3', suit:'spades'},
+    {rank: 'j', suit:'hearts'},
+    {rank: 'a', suit:'clubs'},
+    {rank: '10', suit:'diams'},
+    {rank: 'j', suit:'spades'},
+  ])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="playingCards faceImages">
+        <CardView rank={cards[0].rank} suit={cards[0].suit}/>
+      </div>
     </div>
   );
 }
