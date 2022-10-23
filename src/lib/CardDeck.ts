@@ -14,8 +14,6 @@ class CardDeck {
 
   }
 
-
-
   getCard(): Card {
     const getRandomValueFromArray = (array: Card[]) => {
       const randomIndex = Math.floor(Math.random() * array.length);
@@ -30,18 +28,11 @@ class CardDeck {
 
   getCards(howmany: number) {
     const cardsArray = [];
-    for(let i =0; i<howmany; i++){
-      const getRandomValueFromArray = (array: Card[]) => {
-        const randomIndex = Math.floor(Math.random() * array.length);
-        return array[randomIndex];
-      };
-
-      const randomCard = getRandomValueFromArray(this.deck);
-      const currentIndex = this.deck.indexOf(randomCard);
-      this.deck.splice(currentIndex, 1);
-      cardsArray.push(randomCard);
-      console.log(cardsArray);
+    for(let i = 0; i < howmany; i++){
+      cardsArray.push(this.getCard());
     }
+    console.log(cardsArray);
+    return cardsArray;
   }
 
 }

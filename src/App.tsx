@@ -6,27 +6,40 @@ import CardDeck from "./lib/CardDeck";
 
 function App() {
   const [cards, setCards] = useState<Card[]>([
-    {rank: '3', suit:'spades'},
-    {rank: 'J', suit:'hearts'},
-    {rank: 'A', suit:'clubs'},
-    {rank: '10', suit:'diams'},
-    {rank: 'J', suit:'spades'},
+
   ]);
 
-  const newDeck = new CardDeck();
-  // newDeck.getCard();
-  newDeck.getCards(5);
+  const newCards = () =>{
+    const newDeck = new CardDeck();
+    const newArray = newDeck.getCards(5)
+    console.log(newArray[0]);
+    setCards([
+      {suit: newArray[0].suit, rank: newArray[0].rank},
+      {suit: newArray[1].suit, rank: newArray[1].rank},
+      {suit: newArray[2].suit, rank: newArray[2].rank},
+      {suit: newArray[3].suit, rank: newArray[3].rank},
+      {suit: newArray[4].suit, rank: newArray[4].rank},
+    ])
+  }
 
+  const button = <button onClick={newCards}>Deal cards</button>
 
-
+  if (cards.length === 0){
+    return (
+      <div>You don't have cards
+        {button}
+      </div>
+    )
+  }
 
   return (
     <div className="App playingCards faceImages">
-        <CardView rank={cards[0].rank} suit={cards[0].suit}/>
-        <CardView rank={cards[1].rank} suit={cards[1].suit}/>
-        <CardView rank={cards[2].rank} suit={cards[2].suit}/>
-        <CardView rank={cards[3].rank} suit={cards[3].suit}/>
-        <CardView rank={cards[4].rank} suit={cards[4].suit}/>
+      <CardView rank={cards[0].rank} suit={cards[0].suit}/>
+      <CardView rank={cards[1].rank} suit={cards[1].suit}/>
+      <CardView rank={cards[2].rank} suit={cards[2].suit}/>
+      <CardView rank={cards[3].rank} suit={cards[3].suit}/>
+      <CardView rank={cards[4].rank} suit={cards[4].suit}/>
+      {button}
     </div>
   );
 }
