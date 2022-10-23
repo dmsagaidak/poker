@@ -31,7 +31,6 @@ class CardDeck {
     for(let i = 0; i < howmany; i++){
       cardsArray.push(this.getCard());
     }
-    console.log(cardsArray);
     return cardsArray;
   }
 
