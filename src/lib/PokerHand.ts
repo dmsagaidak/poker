@@ -17,10 +17,10 @@ class PokerHand {
 
   if (pairCount === 1){
     message = 'One pair';
-    console.log(message);
+    alert(message);
   } else if (pairCount === 2){
     message = 'Two pairs';
-    console.log(message);
+    alert(message);
   }
 
   let threeCount = 0;
@@ -36,7 +36,7 @@ class PokerHand {
 
   if (threeCount === 1){
     message = 'Three of a kind'
-    console.log(message);
+    alert(message);
   }
 
   let flush: boolean = false;
@@ -54,7 +54,7 @@ class PokerHand {
     }
     if (flush) {
       message = 'Flush'
-      console.log(message);
+      alert(message);
     }
   }
   return message;
