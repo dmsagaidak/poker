@@ -3,8 +3,34 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background: url("/src/pokerwallpaper.jpg");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root{
+  padding-top: 50px;
+
+}
+
+.msg{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  color: #fff;
+}
+
+.dealCards{
+  width: 300px;
+  height: 70px;
+  position: absolute;
+  top: 200px;
+  left: 39%;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  background: #0a0e0d;
 }
 
 code {

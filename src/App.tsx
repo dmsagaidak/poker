@@ -27,11 +27,13 @@ function App() {
   }
 
 
-  const button = <button onClick={newCards}>Deal cards</button>
+  const button = <button className="dealCards" onClick={newCards}>Deal cards</button>
+
 
   if (cards.length === 0){
     return (
-      <div>You don't have cards
+      <div>
+        <div className="msg">You don't have cards</div>
         {button}
       </div>
     )

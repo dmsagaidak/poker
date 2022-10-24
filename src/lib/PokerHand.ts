@@ -5,6 +5,7 @@ class PokerHand {
   }
 
   getOutcome() {
+    let message = '';
     let pairCount = 0;
     for (let i = 0; i < this.array.length; i++) {
       for (let j = 0; j < i; j++){
@@ -15,9 +16,11 @@ class PokerHand {
     }
 
   if (pairCount === 1){
-    console.log('One pair')
+    message = 'One pair';
+    console.log(message);
   } else if (pairCount === 2){
-    console.log('Two pairs');
+    message = 'Two pairs';
+    console.log(message);
   }
 
   let threeCount = 0;
@@ -32,7 +35,8 @@ class PokerHand {
   }
 
   if (threeCount === 1){
-    console.log('Three of a kind');
+    message = 'Three of a kind'
+    console.log(message);
   }
 
   let flush: boolean = false;
@@ -49,9 +53,11 @@ class PokerHand {
       }
     }
     if (flush) {
-      console.log('Flush');
+      message = 'Flush'
+      console.log(message);
     }
   }
+  return message;
   }
 }
 
